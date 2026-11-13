@@ -1,0 +1,88 @@
+:root {
+  --noite: #0f2f3a;
+  --noite-funda: #091c24;
+  --bruma: #bfd8d2;
+  --ambar: #ffb347;
+  --ameixa: #5b2a4e;
+  --papel: #f2ede4;
+  --fonte: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: var(--noite-funda);
+  color: var(--papel);
+  font-family: var(--fonte);
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+
+.jogo { width: min(100%, 480px); }
+
+.hud {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ambar);
+}
+
+dl { display: flex; gap: 18px; margin: 0; }
+dl div { text-align: right; }
+dt { font-size: 0.8rem; color: var(--bruma); }
+dd { margin: 0; font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+
+.palco {
+  position: relative;
+  border: 2px solid var(--ameixa);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--noite);
+}
+
+canvas { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; touch-action: none; }
+
+.tela {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 24px;
+  background: rgba(9, 28, 36, 0.82);
+}
+.tela[hidden] { display: none; }
+.tela h2 { margin: 0; font-size: 2.2rem; font-weight: 400; color: var(--ambar); }
+.tela p { margin: 0 0 12px; color: var(--bruma); max-width: 30ch; }
+
+button {
+  font: inherit;
+  font-size: 1.1rem;
+  padding: 10px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ambar);
+  color: var(--noite-funda);
+  cursor: pointer;
+}
+button:hover { background: #ffc473; }
+button:focus-visible, canvas:focus-visible { outline: 3px solid var(--papel); outline-offset: 3px; }
+
+.ajuda { margin: 10px 0 0; font-size: 0.85rem; color: var(--bruma); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

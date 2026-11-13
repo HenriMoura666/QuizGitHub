@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vagalume</title>
+  <meta name="description" content="Jogo de navegador: guie um vagalume pela noite, colete luz e fuja dos morcegos.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="jogo">
+    <header class="hud">
+      <h1>Vagalume</h1>
+      <dl>
+        <div><dt>Luz</dt><dd id="score">0</dd></div>
+        <div><dt>Recorde</dt><dd id="best">0</dd></div>
+        <div><dt>Vidas</dt><dd id="lives" aria-label="Vidas restantes">3</dd></div>
+      </dl>
+    </header>
+
+    <div class="palco">
+      <canvas id="game" width="480" height="640" aria-label="Área do jogo"></canvas>
+      <div class="tela" id="overlay">
+        <h2 id="overlay-title">Vagalume</h2>
+        <p id="overlay-text">Colete as luzes. Desvie dos morcegos.</p>
+        <button id="start" type="button">Jogar</button>
+      </div>
+    </div>
+
+    <p class="ajuda">Mouse ou toque para mover · Setas ou A/D · P pausa</p>
+  </main>
+  <script src="src/game.js"></script>
+</body>
+</html>
